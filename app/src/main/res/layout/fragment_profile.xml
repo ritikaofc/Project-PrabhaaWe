@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signUp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="center"
+
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:src="@drawable/logo" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15sp"
+            android:text="Sign Up"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:hint="Name"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:textColorHint="@color/black"
+            android:textSize="18sp"></EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:hint="Aadhar Number"
+            android:inputType="number"
+            android:paddingLeft="20dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:textColorHint="@color/black"
+            android:textSize="18sp"></EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:hint="New Password"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="10dp"
+            android:textColorHint="@color/black"
+            android:textSize="18sp">
+
+        </EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="10dp"
+            android:textColorHint="@color/black"
+            android:textSize="18sp">
+
+        </EditText>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:background="@color/green"
+            android:backgroundTint="@color/green"
+            android:paddingLeft="20sp"
+            android:paddingTop="10sp"
+            android:paddingRight="20sp"
+            android:paddingBottom="10sp"
+            android:text="Sign Up"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="@color/green"
+
+            app:itemIconTint="@drawable/nav_item_colors"
+            app:itemTextColor="@color/black"
+            app:menu="@menu/bottom_bar_items" />
+
+    </LinearLayout>
+
+</RelativeLayout>
