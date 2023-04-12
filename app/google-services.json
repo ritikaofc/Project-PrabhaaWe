@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "547441488068",
+    "project_id": "prabhaawe",
+    "storage_bucket": "prabhaawe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547441488068:android:c44870a76b60ab2b625991",
+        "android_client_info": {
+          "package_name": "com.example.x"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "547441488068-8ik2r41bcr4tcnglo48trgh6656msos6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUSuNiQQGwD_LoANLqjLCjopLosLg9kuM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "547441488068-8ik2r41bcr4tcnglo48trgh6656msos6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
