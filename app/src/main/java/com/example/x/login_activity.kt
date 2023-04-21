@@ -1,14 +1,16 @@
 package com.example.x
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.SignInMethodQueryResult
+
 
 class login_activity : AppCompatActivity() {
 
@@ -63,11 +65,22 @@ class login_activity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    val intent= Intent(this@login_activity,forget_password_activity::class.java)
+                    val intent =Intent(this,forget_password_activity::class.java)
                     startActivity(intent)
-                } else {
+                }
+                else {
                     // If sign in fails, display a message to the user.
-                    Toast.makeText(this@login_activity,"User Does not Exist", Toast.LENGTH_SHORT).show()
+                    // either user does not exist or password is wrong
+                    mAuth.fetchSignInMethodsForEmail(email)
+                        .addOnCompleteListener(OnCompleteListener<SignInMethodQueryResult?> { task ->
+                            val isNewUser = task.result.signInMethods?.isEmpty()
+                            if (isNewUser==true) {
+                                Toast.makeText(this@login_activity,"User Does not Exist", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(this@login_activity,"Password Wrong", Toast.LENGTH_SHORT).show()
+                            }
+                        })
+
                 }
             }
     }
