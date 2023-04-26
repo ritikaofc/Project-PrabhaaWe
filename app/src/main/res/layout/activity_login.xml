@@ -32,13 +32,14 @@
             android:text="Sign In"
             android:layout_marginBottom="25dp"
             android:textAlignment="center"
-            android:textColor="@color/newGreen"
+            android:textColor="@color/black"
             android:textSize="28sp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/email"
             android:background="@drawable/border_box"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -52,6 +53,7 @@
         <EditText
             android:id="@+id/password"
             android:background="@drawable/border_box"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -90,7 +92,7 @@
                 android:paddingStart="10sp"
                 android:paddingEnd="10dp"
                 android:text="Recover it"
-                android:textColor="@color/newGreen"
+                android:textColor="@color/Red"
                 android:textSize="18sp"
                 android:focusable="true" />
         </LinearLayout>
@@ -100,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:backgroundTint="@color/newGreen"
+            android:backgroundTint="@color/LighterRed"
             android:padding="15dp"
             android:text="Sign In"
             android:textColor="@color/white"
@@ -131,7 +133,7 @@
                 android:paddingEnd="10dp"
                 android:text="Sign Up"
                 android:clickable="true"
-                android:textColor="@color/newGreen"
+                android:textColor="@color/Red"
                 android:textSize="18sp"
                 android:focusable="true" />
         </LinearLayout>

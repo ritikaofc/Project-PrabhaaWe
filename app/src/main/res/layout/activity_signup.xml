@@ -34,7 +34,7 @@
             android:layout_marginBottom="15sp"
             android:text="Sign Up"
             android:textAlignment="center"
-            android:textColor="@color/newGreen"
+            android:textColor="@color/black"
             android:textSize="26sp"
             android:textStyle="bold" />
 
@@ -82,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:backgroundTint="@color/newGreen"
+            android:backgroundTint="@color/LighterRed"
             android:padding="15dp"
             android:text="Sign Up"
             android:textColor="@color/white"
