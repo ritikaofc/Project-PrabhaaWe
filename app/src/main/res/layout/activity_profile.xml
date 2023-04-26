@@ -34,16 +34,16 @@
             android:gravity="center_horizontal"
             android:text="LOG OUT"
             android:textSize="20sp" />
-<!--        <TextView-->
-<!--            android:id="@+id/logOut"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:clickable="true"-->
-<!--            android:text="logout"-->
-<!--            android:textColor="@color/newGreen"-->
-<!--            android:textSize="25sp"-->
-<!--            android:focusable="true" />-->
+        <!--        <TextView-->
+        <!--            android:id="@+id/logOut"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:clickable="true"-->
+        <!--            android:text="logout"-->
+        <!--            android:textColor="@color/newGreen"-->
+        <!--            android:textSize="25sp"-->
+        <!--            android:focusable="true" />-->
 
     </LinearLayout>
 

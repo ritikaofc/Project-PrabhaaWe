@@ -14,19 +14,22 @@ class MainActivity : AppCompatActivity() {
         bottom_bar.setOnItemSelectedListener { menuItem ->
 
             when(menuItem.itemId){
+                R.id.nav_home->{
+                    inflateFragment(fragment_home.newInstance())
+                }
                 R.id.nav_issue->{
                     inflateFragment(RaiseFund.newInstance())
                  }
-                R.id.nav_profile->{
-                    inflateFragment(profileFragment.newInstance())
-                }
+               R.id.nav_issue_history->{
+                   inflateFragment(fragment_issue_history.newInstance())
+               }
                 R.id.nav_transaction->{
                     inflateFragment(TransactionsFragment.newInstance())
                 }
             }
             true
         }
-        bottom_bar.selectedItemId= R.id.nav_issue
+        bottom_bar.selectedItemId= R.id.nav_home
 
     }
 
