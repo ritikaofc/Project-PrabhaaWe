@@ -13,27 +13,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="5dp"
-        android:weightSum="2"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="2">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Profile"
-            android:layout_weight="1"
             android:textColor="@color/green"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <Button
-            android:layout_weight="1"
+            android:id="@+id/logOut"
+
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="LOG OUT"
+            android:layout_weight="1"
             android:backgroundTint="@color/green"
             android:gravity="center_horizontal"
+            android:text="LOG OUT"
             android:textSize="20sp" />
-
+<!--        <TextView-->
+<!--            android:id="@+id/logOut"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:clickable="true"-->
+<!--            android:text="logout"-->
+<!--            android:textColor="@color/newGreen"-->
+<!--            android:textSize="25sp"-->
+<!--            android:focusable="true" />-->
 
     </LinearLayout>
 
@@ -117,7 +127,6 @@
         android:inputType="text"
         android:textColor="@color/black"
         android:textStyle="bold" />
-
 
 
 </LinearLayout>

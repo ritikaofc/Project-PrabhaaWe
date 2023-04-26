@@ -34,7 +34,7 @@
             android:layout_marginBottom="15sp"
             android:text="Sign Up"
             android:textAlignment="center"
-            android:textColor="@color/green"
+            android:textColor="@color/newGreen"
             android:textSize="26sp"
             android:textStyle="bold" />
 
@@ -44,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:cursorVisible="true"
+            android:background="@drawable/border_box"
             android:hint="Name"
             android:inputType="text"
             android:padding="10dp"
@@ -52,6 +53,7 @@
 
         <EditText
             android:id="@+id/email"
+            android:background="@drawable/border_box"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -64,6 +66,7 @@
 
         <EditText
             android:id="@+id/password"
+            android:background="@drawable/border_box"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -79,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/newGreen"
             android:padding="15dp"
             android:text="Sign Up"
             android:textColor="@color/white"
