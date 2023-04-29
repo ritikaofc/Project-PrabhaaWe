@@ -39,7 +39,6 @@
         <EditText
             android:id="@+id/email"
             android:background="@drawable/border_box"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -48,7 +47,7 @@
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:textColorHint="@color/black"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/password"
@@ -62,7 +61,7 @@
             android:inputType="textPassword"
             android:padding="10dp"
             android:textColorHint="@color/black"
-            android:textSize="22sp">
+            android:textSize="18sp">
 
         </EditText>
 

@@ -10,7 +10,7 @@
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/green"
+        android:background="@color/LighterRed"
         app:itemIconTint="@drawable/nav_item_colors"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_bar_items"

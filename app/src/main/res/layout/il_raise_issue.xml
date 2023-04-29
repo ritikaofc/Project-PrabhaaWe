@@ -26,21 +26,21 @@
                 android:layout_margin="10dp">
 
                 <TextView
-                    android:id="@+id/account_no"
+                    android:id="@+id/issue_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:elevation="8dp"
                     android:maxLines="1"
-                    android:text="Account No: xxxxxxxxxxxxx"
+                    android:text="Issue Name"
                     android:textColor="@color/LighterRed"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/sender_name"
+                    android:id="@+id/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/account_no"
+                    android:layout_below="@+id/issue_name"
                     android:layout_alignParentLeft="true"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="10dp"
@@ -48,8 +48,7 @@
                     android:elevation="8dp"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="Sender Name"
-                    android:textColor="@android:color/black"
+                    android:text="01/02/2002"
                     android:textSize="18sp" />
 
             </RelativeLayout>
@@ -60,25 +59,27 @@
                 android:layout_margin="10dp">
 
                 <TextView
-                    android:id="@+id/amt"
+                    android:id="@+id/completed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:elevation="8dp"
                     android:gravity="right"
-                    android:text="Amount"
+                    android:text="Completed"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/amt"
+                    android:layout_below="@+id/completed"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="10dp"
                     android:drawablePadding="5dp"
                     android:elevation="8dp"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="$100"
+
+                    android:text="Yes"
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
             </RelativeLayout>
