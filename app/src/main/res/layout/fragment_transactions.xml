@@ -33,14 +33,14 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_below="@+id/transaction_history_toolbar"
-        android:background="@color/Red"></View>
+        android:background="@color/Red" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/transactionsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/view_toolbar"
-        android:background="@color/Grey"
+        android:background="#B8B6B6"
         android:padding="16dp"
         tools:listitem="@layout/item_list" />
 

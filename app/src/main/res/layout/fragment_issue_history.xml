@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/view_toolbar"
-        android:background="@color/Grey"
+        android:background="#B8B6B6"
         android:padding="12dp" />
 
 

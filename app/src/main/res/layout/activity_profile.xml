@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_below="@+id/profile_toolbar"
-        android:background="@color/Red"></View>
+        android:background="@color/Red" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/profile_photo"
@@ -68,7 +68,7 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"></de.hdodenhof.circleimageview.CircleImageView>
+            app:layout_constraintVertical_bias="1.0" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="47dp"
@@ -106,7 +106,7 @@
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/LighterRed"
-            android:textSize="16sp"></EditText>
+            android:textSize="16sp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -122,7 +122,7 @@
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/LighterRed"
-            android:textSize="16sp"></EditText>
+            android:textSize="16sp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -138,7 +138,7 @@
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/LighterRed"
-            android:textSize="16sp"></EditText>
+            android:textSize="16sp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -154,7 +154,7 @@
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/LighterRed"
-            android:textSize="16sp"></EditText>
+            android:textSize="16sp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -170,7 +170,7 @@
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/LighterRed"
-            android:textSize="16sp"></EditText>
+            android:textSize="16sp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -186,7 +186,7 @@
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/LighterRed"
-            android:textSize="16sp"></EditText>
+            android:textSize="16sp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -202,7 +202,7 @@
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/LighterRed"
-            android:textSize="16sp"></EditText>
+            android:textSize="16sp" />
 
         <Button
             android:layout_width="wrap_content"
@@ -212,7 +212,7 @@
             android:text="SAVE"
             android:textColor="@color/white"
             android:textSize="16dp"
-            android:textStyle="bold"></Button>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
