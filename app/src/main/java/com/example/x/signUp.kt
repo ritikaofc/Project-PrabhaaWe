@@ -3,6 +3,7 @@ package com.example.x
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -22,6 +23,9 @@ class signUp : AppCompatActivity() {
         setContentView(R.layout.activity_signup)
 
         supportActionBar?.hide()
+        this.getWindow().setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         mAuth= FirebaseAuth.getInstance()
         edtName=findViewById(R.id.name)

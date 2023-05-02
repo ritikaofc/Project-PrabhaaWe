@@ -2,6 +2,7 @@ package com.example.x
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -29,6 +30,10 @@ class login_activity : AppCompatActivity() {
 
         //to hide the title bar
         supportActionBar?.hide()
+        //for full screen display
+        this.getWindow().setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //getting an instance of the same
         mAuth = FirebaseAuth.getInstance()
