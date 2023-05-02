@@ -12,5 +12,6 @@
     <color name="Red">#F80000</color>
     <color name="LighterRed">#EE3535</color>
     <color name="Grey">#B8B0B0</color>
+    <color name="DarkGrey">#797575</color>
 
 </resources>

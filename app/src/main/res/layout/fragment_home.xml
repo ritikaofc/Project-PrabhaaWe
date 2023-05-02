@@ -37,6 +37,81 @@
         android:layout_height="2dp"
         android:layout_below="@+id/home_toolbar"
         android:background="@color/Red" />
+    
+    <TextView
+        android:id="@+id/tv_intro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_toolbar"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:elevation="8dp"
+        android:text="Check out what we have for you!"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="22sp"></TextView>
+    
+    
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_intro"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:elevation="8dp"
+        app:cardBackgroundColor="@color/DarkGrey"
+        android:outlineAmbientShadowColor="@color/LighterRed">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:layout_marginLeft="8sp"
+            android:layout_marginRight="8sp">
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eg"></ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Launch Year : 21/04/1000"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vision: Cvvdguhdhffh"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="italic"></TextView>
+            <Button
+                android:layout_marginTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/LighterRed"
+                android:text="explore More >>"
+                android:padding="12dp"
+                android:elevation="15dp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:shadowColor="@color/white"
+                ></Button>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
 
 
 </RelativeLayout>
