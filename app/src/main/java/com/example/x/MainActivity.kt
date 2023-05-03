@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
             when(menuItem.itemId){
                 R.id.nav_home->{
-                    inflateFragment(fragment_home.newInstance())
+                    inflateFragment(Home_Fragment.newInstance())
                 }
                 R.id.nav_issue->{
                     inflateFragment(RaiseFund.newInstance())
