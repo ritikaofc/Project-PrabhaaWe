@@ -69,6 +69,7 @@ tools:context=".Home_Fragment">
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/schemeImg"
             android:layout_width="match_parent"
             android:layout_height="280dp"
             android:elevation="16dp"
@@ -89,7 +90,7 @@ tools:context=".Home_Fragment">
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <EditText
+            <TextView
                 android:id="@+id/launchYear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -117,7 +118,7 @@ tools:context=".Home_Fragment">
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <EditText
+            <TextView
                 android:id="@+id/vision"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

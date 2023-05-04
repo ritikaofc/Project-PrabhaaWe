@@ -9,9 +9,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.x.databinding.FragmentHomeBinding
+import kotlinx.android.synthetic.main.fragment_home_.*
 import kotlinx.android.synthetic.main.fragment_home_.view.*
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 
 
@@ -22,6 +25,8 @@ class Home_Fragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
     }
 
     override fun onCreateView(
@@ -31,11 +36,15 @@ class Home_Fragment : Fragment() {
 
         _binding=FragmentHomeBinding.inflate(inflater,container,false)
 
-
         binding.userImage.setOnClickListener{
             val intent = Intent(context,ProfileActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnExploreMore.setOnClickListener {
+            getData()
+        }
+
 
 //        OLD METHOD
 //        val view= inflater.inflate(R.layout.fragment_home_, container, false)
@@ -59,5 +68,30 @@ class Home_Fragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun getData()
+    {
+        val progressDialog=ProgressDialog(context)
+        progressDialog.setMessage("Please wait while data is being fetched")
+        progressDialog.show()
+
+        RetrofitInstance.apiInterface.getData().enqueue(object : Callback<responseDataClass?> {
+            override fun onResponse(
+                call: Call<responseDataClass?>,
+                response: Response<responseDataClass?>
+            ) {
+                binding.launchYear.text=response.body()?.launchYear
+                binding.vision.text=response.body()?.vision
+                context?.let { Glide.with(it).load(response.body()?.img).into(binding.schemeImg) }
+                progressDialog.dismiss()
+            }
+
+            override fun onFailure(call: Call<responseDataClass?>, t: Throwable) {
+                Toast.makeText(context,"${t.localizedMessage}",Toast.LENGTH_SHORT).show()
+                progressDialog.dismiss()
+            }
+        })
+
     }
 }
