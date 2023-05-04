@@ -132,6 +132,7 @@ tools:context=".Home_Fragment">
 
 
         <Button
+            android:id="@+id/btn_explore_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -142,7 +143,7 @@ tools:context=".Home_Fragment">
             android:padding="12dp"
             android:shadowColor="@color/white"
             android:text="explore More >>"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
 

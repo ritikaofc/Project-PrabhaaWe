@@ -1,14 +1,22 @@
 package com.example.x
 
+import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.x.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import retrofit2.Call
+import retrofit2.Response
+import javax.security.auth.callback.Callback
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
         val bottom_bar = findViewById<BottomNavigationView>(R.id.bottom_bar)
 
@@ -36,9 +44,14 @@ class MainActivity : AppCompatActivity() {
         }
         bottom_bar.selectedItemId= R.id.nav_home
 
+        //ApiCall
+
+
     }
 
-        private fun inflateFragment(newInstance:Fragment ) {
+
+
+    private fun inflateFragment(newInstance:Fragment ) {
             val transaction =supportFragmentManager.beginTransaction()
             transaction.replace(R.id.container,newInstance)
             transaction.commit()
