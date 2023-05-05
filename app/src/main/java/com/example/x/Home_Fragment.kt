@@ -3,10 +3,10 @@ package com.example.x
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
@@ -22,6 +22,8 @@ class Home_Fragment : Fragment() {
 
     private var _binding:FragmentHomeBinding?= null
     private val binding get() = _binding!!
+    val BASE_URL="https://3e38129a-da8d-4a9b-ad2e-f0e972e9dd38.mock.pstmn.io//"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +44,11 @@ class Home_Fragment : Fragment() {
         }
 
         binding.btnExploreMore.setOnClickListener {
-            getData()
+            var random=(4..9).random()
+            Log.d("Random",random.toString())
+            val url=BASE_URL+random
+            getData(url)
+            Log.d("Random",url.toString())
         }
 
 
@@ -70,14 +76,16 @@ class Home_Fragment : Fragment() {
         _binding = null
     }
 
-    fun getData()
+    fun getData(url:String)
     {
+
         val progressDialog=ProgressDialog(context)
         progressDialog.setMessage("Please wait while data is being fetched")
         progressDialog.show()
 
-        RetrofitInstance.apiInterface.getData().enqueue(object : Callback<responseDataClass?> {
+        RetrofitInstance.apiInterface.getData(url).enqueue(object : Callback<responseDataClass?> {
             override fun onResponse(
+
                 call: Call<responseDataClass?>,
                 response: Response<responseDataClass?>
             ) {

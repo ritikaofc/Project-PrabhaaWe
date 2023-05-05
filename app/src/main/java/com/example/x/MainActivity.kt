@@ -56,4 +56,6 @@ class MainActivity : AppCompatActivity() {
             transaction.replace(R.id.container,newInstance)
             transaction.commit()
         }
+
+
 }

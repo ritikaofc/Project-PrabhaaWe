@@ -1,5 +1,22 @@
 <resources>
     <string name="app_name">X</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="sender_1">Rachel</string>
+    <string name="sender_2">Joeyy</string>
+    <string name="sender_3">Monica</string>
+    <string name="sender_4">Chanler</string>
+    <string name="sender_5">Rosss</string>
+    <string name="sender_6">Phoebe</string>
+    <string name="sender_7">Hayley</string>
+    <string name="sender_8">Alexx</string>
+
+
+
+
+
+
+
+
 </resources>
