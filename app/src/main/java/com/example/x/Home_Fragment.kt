@@ -22,8 +22,9 @@ class Home_Fragment : Fragment() {
 
     private var _binding:FragmentHomeBinding?= null
     private val binding get() = _binding!!
-    val BASE_URL="https://3e38129a-da8d-4a9b-ad2e-f0e972e9dd38.mock.pstmn.io//"
-
+    private val BASE_URL="https://3e38129a-da8d-4a9b-ad2e-f0e972e9dd38.mock.pstmn.io//"
+    private var count:Int = 0
+    private var temp:Int =0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +47,16 @@ class Home_Fragment : Fragment() {
         binding.btnExploreMore.setOnClickListener {
             var random=(4..9).random()
             Log.d("Random",random.toString())
+            count += 1
+            if(count!=1)
+            {
+                if(temp==random)
+                {
+                    random=(4..9).random()
+                    count+=1
+                }
+            }
+            temp=random
             val url=BASE_URL+random
             getData(url)
             Log.d("Random",url.toString())
