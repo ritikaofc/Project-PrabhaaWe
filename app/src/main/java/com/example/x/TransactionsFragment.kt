@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 
 
 class TransactionsFragment : Fragment() {
@@ -15,9 +14,9 @@ class TransactionsFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var transactionsList: ArrayList<Transactions>
 
-    lateinit var acc: Array<Int>
-    lateinit var sender:Array<String>
-    lateinit var amt:Array<Int>
+    private lateinit var acc: Array<Int>
+    private lateinit var sender:Array<String>
+    private lateinit var amt:Array<String>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,14 +77,14 @@ class TransactionsFragment : Fragment() {
         )
 
         amt= arrayOf(
-            1000,
-            2000,
-            3000,
-            4000,
-            5000,
-            6000,
-            7000,
-            8000
+            "$1000",
+            "$2000",
+            "$3000",
+            "$4000",
+            "$5000",
+            "$6000",
+            "$7000",
+            "$8000"
 
         )
 
