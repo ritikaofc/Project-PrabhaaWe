@@ -21,6 +21,7 @@ class login_activity : AppCompatActivity() {
     private lateinit var txtRecover:TextView
     private  lateinit var txtSignup:TextView
 
+
     //creating a firebase auth
     private lateinit var mAuth: FirebaseAuth
 
@@ -43,6 +44,7 @@ class login_activity : AppCompatActivity() {
         btnSignIn=findViewById(R.id.btn_signin)
         txtRecover=findViewById(R.id.recover)
         txtSignup=findViewById(R.id.btn_signup)
+
 
         txtSignup.setOnClickListener{
             val intent=Intent(this,signUp::class.java)

@@ -166,7 +166,7 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/district"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30sp"
@@ -175,8 +175,8 @@
             android:layout_marginBottom="8sp"
             android:background="@drawable/border_box"
             android:cursorVisible="true"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
+            android:hint="District"
+            android:inputType="text"
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/LighterRed"
