@@ -6,11 +6,11 @@ import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import kotlin.math.log
 
 class signUp : AppCompatActivity() {
 
@@ -26,7 +26,7 @@ class signUp : AppCompatActivity() {
         setContentView(R.layout.activity_signup)
 
         supportActionBar?.hide()
-        this.getWindow().setFlags(
+        this.window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -54,11 +54,10 @@ class signUp : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign up success, update UI with the signed-in user's information
-                    addUserToDatabase(email,password,name)
-                    val intent= Intent(this,MainActivity::class.java)
-                    finish()
-                    startActivity(intent)
-
+                    addUserToDatabase(email,password,name,mAuth.currentUser?.uid!!)
+//                    val intent= Intent(this,ProfileActivity::class.java)
+//                    finish()
+//                    startActivity(intent)
                 } else {
                     // If sign up fails, display a message to the user.
                     Toast.makeText(this,"Some Error Occurred",Toast.LENGTH_SHORT).show()
@@ -66,11 +65,22 @@ class signUp : AppCompatActivity() {
             }
     }
 
-    private fun addUserToDatabase(email: String, password: String, name: String) {
+    private fun addUserToDatabase(email: String, password: String, name: String, uid: String) {
         db=FirebaseDatabase.getInstance().reference
-        Toast.makeText(this,"adding data to user",Toast.LENGTH_SHORT).show()
-        db.child("Users").child(email).child("signUp").setValue(signUpUser(name, email, password))
-        Toast.makeText(this,"added data to user",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"adding data",Toast.LENGTH_SHORT).show()
+        db.child("Users").child(uid).child("signUp").setValue(signUpUser(name,email,password,uid))
+        Toast.makeText(this,"data added",Toast.LENGTH_SHORT).show()
+        changeofActivity(uid)
     }
 
+    private fun changeofActivity(uid: String) {
+        val intent= Intent(this,ProfileActivity::class.java)
+        intent.putExtra("uid",uid)
+        finish()
+        startActivity(intent)
+    }
+
+
 }
+
+

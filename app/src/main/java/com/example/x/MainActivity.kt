@@ -14,15 +14,19 @@ import javax.security.auth.callback.Callback
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var uid:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
         val bottom_bar = findViewById<BottomNavigationView>(R.id.bottom_bar)
 
+        uid = intent.getStringExtra("uid").toString()
+
         this.getWindow().setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
         bottom_bar.setOnItemSelectedListener { menuItem ->
 
