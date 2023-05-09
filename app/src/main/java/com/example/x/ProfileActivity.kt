@@ -1,7 +1,9 @@
 package com.example.x
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -13,7 +15,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import de.hdodenhof.circleimageview.CircleImageView
-import kotlin.math.log
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var logOutBtn:TextView
@@ -31,6 +32,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var updateBtn:Button
     private lateinit var db:DatabaseReference
     private lateinit var uid:String
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -53,6 +55,10 @@ class ProfileActivity : AppCompatActivity() {
         uid = intent.getStringExtra("uid").toString()
 
 
+        val sharedPref=getSharedPreferences("mypref",Context.MODE_PRIVATE)
+        val editor=sharedPref.edit()
+        loadProfileData(sharedPref)
+
 
         logOutBtn.setOnClickListener{
             Toast.makeText(this@ProfileActivity,"Signing Out...", Toast.LENGTH_SHORT).show()
@@ -71,6 +77,17 @@ class ProfileActivity : AppCompatActivity() {
             val address=userAddress.text.toString()
             addProfileData(fullName,age,gender,phone,district,aadhar,address)
             Toast.makeText(this,"saving....",Toast.LENGTH_SHORT).show()
+            editor.apply {
+                putString("fullName",fullName)
+                putString("age",age)
+                putString("gender",gender)
+                putString("aadhar",aadhar)
+                putString("phone",phone)
+                putString("district",district)
+                putString("address",address)
+                apply()
+            }
+            loadProfileData(sharedPref)
         }
 
         backBtn.setOnClickListener{
@@ -81,17 +98,58 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         updateBtn.setOnClickListener{
-            val intent=Intent(this,UpdateProfile::class.java)
-            startActivity(intent)
-            true
+//            val intent=Intent(this,UpdateProfile::class.java)
+//            intent.putExtra("uid",uid)
+//            finish()
+//            startActivity(intent)
+            val fullName=userName.text.toString()
+            val age=userAge.text.toString()
+            val gender=userGender.text.toString()
+            val aadhar=userAadhar.text.toString()
+            val phone=userPhone.text.toString()
+            val district=userDistrict.text.toString()
+            val address=userAddress.text.toString()
+            Toast.makeText(this,"Updating..",Toast.LENGTH_SHORT).show()
+            addProfileData(fullName,age,gender,phone,district,aadhar,address)
+            editor.apply {
+                putString("fullName",fullName)
+                putString("age",age)
+                putString("gender",gender)
+                putString("aadhar",aadhar)
+                putString("phone",phone)
+                putString("district",district)
+                putString("address",address)
+                apply()
+            }
+            loadProfileData(sharedPref)
         }
+
+    }
+
+    private fun loadProfileData(sharedPref: SharedPreferences?) {
+        val name= sharedPref?.getString("fullName",null)
+        val age= sharedPref?.getString("age",null)
+        val gender= sharedPref?.getString("gender",null)
+        val phone= sharedPref?.getString("phone",null)
+        val district= sharedPref?.getString("district",null)
+        val address= sharedPref?.getString("address",null)
+        val aadhar= sharedPref?.getString("aadhar",null)
+
+        userName.setText(name)
+        userPhone.setText(phone)
+        userAge.setText(age)
+        userDistrict.setText(district)
+        userAddress.setText(address)
+        userAadhar.setText(aadhar)
+        userGender.setText(gender)
 
     }
 
 
     private fun addProfileData(fullName: String, age: String, gender: String, phone: String, district: String, aadhar: String, address: String) {
         db=FirebaseDatabase.getInstance().reference
-        db.child("Users").child(uid).child("Profile").setValue(profileDetails(fullName,age,gender,phone,district,aadhar,address))
+        val id=FirebaseAuth.getInstance().currentUser!!.uid
+        db.child("Users").child(id).child("Profile").setValue(profileDetails(fullName,age,gender,phone,district,aadhar,address))
     }
 
 
