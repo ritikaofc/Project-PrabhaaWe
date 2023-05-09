@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -15,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import de.hdodenhof.circleimageview.CircleImageView
+import kotlin.properties.Delegates
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var logOutBtn:TextView
@@ -32,7 +34,8 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var updateBtn:Button
     private lateinit var db:DatabaseReference
     private lateinit var uid:String
-
+    private  var IMAGE_CODE:Int = 0
+    private lateinit var imageUri:Uri
 
 
     @SuppressLint("MissingInflatedId")
@@ -53,7 +56,8 @@ class ProfileActivity : AppCompatActivity() {
         saveBtn=findViewById(R.id.save_profile_btn)
         updateBtn=findViewById(R.id.update_profile_btn)
         uid = intent.getStringExtra("uid").toString()
-
+        IMAGE_CODE=1
+        userImage=findViewById(R.id.userprofileImage)
 
         val sharedPref=getSharedPreferences("mypref",Context.MODE_PRIVATE)
         val editor=sharedPref.edit()
@@ -97,6 +101,11 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        userImage.setOnClickListener{
+
+            openImage()
+        }
+
         updateBtn.setOnClickListener{
 //            val intent=Intent(this,UpdateProfile::class.java)
 //            intent.putExtra("uid",uid)
@@ -124,6 +133,25 @@ class ProfileActivity : AppCompatActivity() {
             loadProfileData(sharedPref)
         }
 
+
+
+    }
+
+    private fun openImage() {
+        intent= Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(intent,IMAGE_CODE)
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode==IMAGE_CODE && resultCode==RESULT_OK && data!=null && data.data !=null )
+        {
+            imageUri= data.data!!
+            userImage.setImageURI(imageUri)
+        }
     }
 
     private fun loadProfileData(sharedPref: SharedPreferences?) {
@@ -151,6 +179,8 @@ class ProfileActivity : AppCompatActivity() {
         val id=FirebaseAuth.getInstance().currentUser!!.uid
         db.child("Users").child(id).child("Profile").setValue(profileDetails(fullName,age,gender,phone,district,aadhar,address))
     }
+
+
 
 
 }
