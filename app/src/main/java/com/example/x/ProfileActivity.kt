@@ -28,6 +28,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var userAddress:EditText
     private lateinit var mAuth: FirebaseAuth
     private lateinit var saveBtn:Button
+    private lateinit var updateBtn:Button
     private lateinit var db:DatabaseReference
     private lateinit var uid:String
 
@@ -48,12 +49,13 @@ class ProfileActivity : AppCompatActivity() {
         userDistrict=findViewById(R.id.district)
         userAddress=findViewById(R.id.address)
         saveBtn=findViewById(R.id.save_profile_btn)
+        updateBtn=findViewById(R.id.update_profile_btn)
         uid = intent.getStringExtra("uid").toString()
 
 
 
         logOutBtn.setOnClickListener{
-            Toast.makeText(this@ProfileActivity,"Signing Out....", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@ProfileActivity,"Signing Out...", Toast.LENGTH_SHORT).show()
             mAuth.signOut()
             val intent=Intent(this,login_activity::class.java)
             startActivity(intent)
@@ -76,6 +78,12 @@ class ProfileActivity : AppCompatActivity() {
             intent.putExtra("uid",uid)
             finish()
             startActivity(intent)
+        }
+
+        updateBtn.setOnClickListener{
+            val intent=Intent(this,UpdateProfile::class.java)
+            startActivity(intent)
+            true
         }
 
     }

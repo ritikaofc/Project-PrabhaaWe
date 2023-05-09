@@ -24,23 +24,11 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:text="Profile"
+            android:text="Update Profile"
             android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/logOutbtnprofile"
-            android:clickable="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:gravity="center"
-            android:paddingRight="5sp"
-            android:text="Logout"
-            android:textColor="@color/Red"
-            android:textSize="16dp"
-            android:focusable="true" />
 
     </RelativeLayout>
 
@@ -215,40 +203,17 @@
             android:textColor="@color/black"
             android:textColorHint="@color/LighterRed"
             android:textSize="16sp" />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="10sp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp">
+
         <Button
-            android:id="@+id/save_profile_btn"
+            android:id="@+id/update_profile_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/LighterRed"
-            android:text="SAVE"
-
-            android:layout_marginRight="10dp"
+            android:text="Update"
             android:textColor="@color/white"
             android:textSize="16dp"
             android:textStyle="bold" />
-            <Button
-
-                android:id="@+id/update_profile_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@color/LighterRed"
-                android:text="UPDATE"
-                android:textColor="@color/white"
-                android:layout_marginLeft="50dp"
-                android:textSize="16sp"
-
-                android:textStyle="bold" />
-
-        </LinearLayout>
 
     </LinearLayout>
 
