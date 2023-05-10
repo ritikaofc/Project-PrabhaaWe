@@ -5,9 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.example.x.databinding.FragmentRaiseFundBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class RaiseFund : Fragment() {
 
+    private var _binding: FragmentRaiseFundBinding?= null
+    private val binding get() = _binding!!
+    private lateinit var mAuth: FirebaseAuth
+    private lateinit var db: DatabaseReference
+    var countIssues:Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,8 +28,52 @@ class RaiseFund : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_raise_fund, container, false)
+        _binding=FragmentRaiseFundBinding.inflate(inflater,container,false)
+        mAuth= FirebaseAuth.getInstance()
+
+
+        binding.saveBtnRaiseIssue.setOnClickListener{
+            val Name=binding.issueName.text.toString()
+            val Description=binding.issueDescription.text.toString()
+            val fundRequired=binding.fundRequired.text.toString()
+            val tenure=binding.tenure.text.toString()
+            val supportingDocument=binding.supportingDocument.text.toString()
+            val upi=binding.UPI.text.toString()
+            val accountDetails=binding.accountDetails.text.toString()
+            countIssues+=1
+            addingRaiseIssueData(Name,Description,fundRequired,tenure,supportingDocument,upi,accountDetails,countIssues)
+            Toast.makeText(context,"saving issue to issue history",Toast.LENGTH_SHORT).show()
+            binding.issueName.text.clear()
+            binding.UPI.text.clear()
+            binding.fundRequired.text.clear()
+            binding.accountDetails.text.clear()
+            binding.issueDescription.text.clear()
+            binding.tenure.text.clear()
+            binding.supportingDocument.text.clear()
+
+        }
+
+
+        return binding.root
     }
+
+    private fun addingRaiseIssueData(
+        issueName: String,
+        issueDescription: String,
+        fundRequired: String,
+        tenure: String,
+        supportingDocument: String,
+        upi: String,
+        accountDetails: String,
+        countIssues:Int
+    ) {
+        db= FirebaseDatabase.getInstance().reference
+        val id=FirebaseAuth.getInstance().currentUser!!.uid
+        Toast.makeText(context,"value of count issues is ${countIssues}..",Toast.LENGTH_SHORT).show()
+        db.child("Users").child(id).child("Issues").child(countIssues.toString()).setValue(RaiseIssueDetails(issueName,issueDescription,fundRequired
+        ,tenure,supportingDocument,upi,accountDetails))
+    }
+
 
     companion object {
 

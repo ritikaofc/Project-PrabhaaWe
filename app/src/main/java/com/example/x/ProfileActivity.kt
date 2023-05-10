@@ -59,9 +59,9 @@ class ProfileActivity : AppCompatActivity() {
         IMAGE_CODE=1
         userImage=findViewById(R.id.userprofileImage)
 
-        val sharedPref=getSharedPreferences("mypref",Context.MODE_PRIVATE)
-        val editor=sharedPref.edit()
-        loadProfileData(sharedPref)
+       // val sharedPref=getSharedPreferences("mypref",Context.MODE_PRIVATE)
+        //val editor=sharedPref.edit()
+     //   loadProfileData(sharedPref)
 
 
         logOutBtn.setOnClickListener{
@@ -81,17 +81,17 @@ class ProfileActivity : AppCompatActivity() {
             val address=userAddress.text.toString()
             addProfileData(fullName,age,gender,phone,district,aadhar,address)
             Toast.makeText(this,"saving....",Toast.LENGTH_SHORT).show()
-            editor.apply {
-                putString("fullName",fullName)
-                putString("age",age)
-                putString("gender",gender)
-                putString("aadhar",aadhar)
-                putString("phone",phone)
-                putString("district",district)
-                putString("address",address)
-                apply()
-            }
-            loadProfileData(sharedPref)
+//            editor.apply {
+//                putString("fullName",fullName)
+//                putString("age",age)
+//                putString("gender",gender)
+//                putString("aadhar",aadhar)
+//                putString("phone",phone)
+//                putString("district",district)
+//                putString("address",address)
+//                apply()
+//            }
+          //  loadProfileData(sharedPref)
         }
 
         backBtn.setOnClickListener{
@@ -107,10 +107,6 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         updateBtn.setOnClickListener{
-//            val intent=Intent(this,UpdateProfile::class.java)
-//            intent.putExtra("uid",uid)
-//            finish()
-//            startActivity(intent)
             val fullName=userName.text.toString()
             val age=userAge.text.toString()
             val gender=userGender.text.toString()
@@ -120,20 +116,18 @@ class ProfileActivity : AppCompatActivity() {
             val address=userAddress.text.toString()
             Toast.makeText(this,"Updating..",Toast.LENGTH_SHORT).show()
             addProfileData(fullName,age,gender,phone,district,aadhar,address)
-            editor.apply {
-                putString("fullName",fullName)
-                putString("age",age)
-                putString("gender",gender)
-                putString("aadhar",aadhar)
-                putString("phone",phone)
-                putString("district",district)
-                putString("address",address)
-                apply()
-            }
-            loadProfileData(sharedPref)
+//            editor.apply {
+//                putString("fullName",fullName)
+//                putString("age",age)
+//                putString("gender",gender)
+//                putString("aadhar",aadhar)
+//                putString("phone",phone)
+//                putString("district",district)
+//                putString("address",address)
+//                apply()
+//            }
+          //  loadProfileData(sharedPref)
         }
-
-
 
     }
 
@@ -153,25 +147,25 @@ class ProfileActivity : AppCompatActivity() {
             userImage.setImageURI(imageUri)
         }
     }
-
-    private fun loadProfileData(sharedPref: SharedPreferences?) {
-        val name= sharedPref?.getString("fullName",null)
-        val age= sharedPref?.getString("age",null)
-        val gender= sharedPref?.getString("gender",null)
-        val phone= sharedPref?.getString("phone",null)
-        val district= sharedPref?.getString("district",null)
-        val address= sharedPref?.getString("address",null)
-        val aadhar= sharedPref?.getString("aadhar",null)
-
-        userName.setText(name)
-        userPhone.setText(phone)
-        userAge.setText(age)
-        userDistrict.setText(district)
-        userAddress.setText(address)
-        userAadhar.setText(aadhar)
-        userGender.setText(gender)
-
-    }
+//
+//    private fun loadProfileData(sharedPref: SharedPreferences?) {
+//        val name= sharedPref?.getString("fullName",null)
+//        val age= sharedPref?.getString("age",null)
+//        val gender= sharedPref?.getString("gender",null)
+//        val phone= sharedPref?.getString("phone",null)
+//        val district= sharedPref?.getString("district",null)
+//        val address= sharedPref?.getString("address",null)
+//        val aadhar= sharedPref?.getString("aadhar",null)
+//
+//        userName.setText(name)
+//        userPhone.setText(phone)
+//        userAge.setText(age)
+//        userDistrict.setText(district)
+//        userAddress.setText(address)
+//        userAadhar.setText(aadhar)
+//        userGender.setText(gender)
+//
+//    }
 
 
     private fun addProfileData(fullName: String, age: String, gender: String, phone: String, district: String, aadhar: String, address: String) {
