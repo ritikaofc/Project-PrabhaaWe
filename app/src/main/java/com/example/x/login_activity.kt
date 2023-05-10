@@ -72,6 +72,7 @@ class login_activity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
+                    sharedPrefer.putBoolean("isUserLoggedIn",true)
                     val intent =Intent(this,MainActivity::class.java)
                     finish()
                     startActivity(intent)

@@ -1,5 +1,6 @@
 package com.example.x
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.os.Looper
 import android.view.WindowManager
 
 class splash_screen : AppCompatActivity() {
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
@@ -17,9 +19,22 @@ class splash_screen : AppCompatActivity() {
 
 
         Handler(Looper.getMainLooper()).postDelayed({
-        val intent= Intent(this,login_activity::class.java)
-            startActivity(intent)
+
+            val isLoggedIn=sharedPrefer.getBoolean("isUserLoggedIn")
+            if(isLoggedIn){
+                val intent= Intent(this,MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }else{
+                val intent= Intent(this,login_activity::class.java)
+                startActivity(intent)
+                finish()
+            }
+
+
         },3000)
+
+
 
     }
 }
