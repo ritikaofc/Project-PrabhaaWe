@@ -7,6 +7,7 @@ import android.content.SharedPreferences
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -15,7 +16,9 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.coroutines.newFixedThreadPoolContext
 import kotlin.properties.Delegates
 
 class ProfileActivity : AppCompatActivity() {
@@ -59,9 +62,7 @@ class ProfileActivity : AppCompatActivity() {
         IMAGE_CODE=1
         userImage=findViewById(R.id.userprofileImage)
 
-       // val sharedPref=getSharedPreferences("mypref",Context.MODE_PRIVATE)
-        //val editor=sharedPref.edit()
-     //   loadProfileData(sharedPref)
+        retrieveDataProfileFromFragment()
 
 
         logOutBtn.setOnClickListener{
@@ -81,17 +82,7 @@ class ProfileActivity : AppCompatActivity() {
             val address=userAddress.text.toString()
             addProfileData(fullName,age,gender,phone,district,aadhar,address)
             Toast.makeText(this,"saving....",Toast.LENGTH_SHORT).show()
-//            editor.apply {
-//                putString("fullName",fullName)
-//                putString("age",age)
-//                putString("gender",gender)
-//                putString("aadhar",aadhar)
-//                putString("phone",phone)
-//                putString("district",district)
-//                putString("address",address)
-//                apply()
-//            }
-          //  loadProfileData(sharedPref)
+            retrieveDataProfileFromFragment()
         }
 
         backBtn.setOnClickListener{
@@ -116,19 +107,39 @@ class ProfileActivity : AppCompatActivity() {
             val address=userAddress.text.toString()
             Toast.makeText(this,"Updating..",Toast.LENGTH_SHORT).show()
             addProfileData(fullName,age,gender,phone,district,aadhar,address)
-//            editor.apply {
-//                putString("fullName",fullName)
-//                putString("age",age)
-//                putString("gender",gender)
-//                putString("aadhar",aadhar)
-//                putString("phone",phone)
-//                putString("district",district)
-//                putString("address",address)
-//                apply()
-//            }
-          //  loadProfileData(sharedPref)
+            retrieveDataProfileFromFragment()
         }
 
+    }
+
+    private fun retrieveDataProfileFromFragment() {
+        val id = FirebaseAuth.getInstance().currentUser!!.uid
+        db= FirebaseDatabase.getInstance().reference.child("Users").child(id)
+        db.child("Profile").get().addOnSuccessListener {
+            if (it.exists()) {
+                val aadhar=it.child("aadharNumber").value
+                val address=it.child("address").value
+                val name=it.child("fullName").value
+                val age=it.child("age").value
+                val district=it.child("district").value
+                val gender=it.child("gender").value
+                val phone=it.child("phoneNumber").value
+                Toast.makeText(this,"Profile info successfully retrieved..",Toast.LENGTH_SHORT).show()
+                userName.setText(name.toString())
+                userGender.setText(gender.toString())
+                userAddress.setText(address.toString())
+                userAadhar.setText(aadhar.toString())
+                userDistrict.setText(district.toString())
+                userAge.setText(age.toString())
+                userPhone.setText(phone.toString())
+
+            }else{
+                Toast.makeText(this,"Profile info does not exist..",Toast.LENGTH_SHORT).show()
+            }
+
+        }.addOnFailureListener{
+            Toast.makeText(this,"Unable to fetch data from firebase..",Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun openImage() {
@@ -147,25 +158,8 @@ class ProfileActivity : AppCompatActivity() {
             userImage.setImageURI(imageUri)
         }
     }
-//
-//    private fun loadProfileData(sharedPref: SharedPreferences?) {
-//        val name= sharedPref?.getString("fullName",null)
-//        val age= sharedPref?.getString("age",null)
-//        val gender= sharedPref?.getString("gender",null)
-//        val phone= sharedPref?.getString("phone",null)
-//        val district= sharedPref?.getString("district",null)
-//        val address= sharedPref?.getString("address",null)
-//        val aadhar= sharedPref?.getString("aadhar",null)
-//
-//        userName.setText(name)
-//        userPhone.setText(phone)
-//        userAge.setText(age)
-//        userDistrict.setText(district)
-//        userAddress.setText(address)
-//        userAadhar.setText(aadhar)
-//        userGender.setText(gender)
-//
-//    }
+
+
 
 
     private fun addProfileData(fullName: String, age: String, gender: String, phone: String, district: String, aadhar: String, address: String) {
@@ -173,8 +167,5 @@ class ProfileActivity : AppCompatActivity() {
         val id=FirebaseAuth.getInstance().currentUser!!.uid
         db.child("Users").child(id).child("Profile").setValue(profileDetails(fullName,age,gender,phone,district,aadhar,address))
     }
-
-
-
 
 }
