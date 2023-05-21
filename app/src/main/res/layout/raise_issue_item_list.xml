@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/white"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/issue_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="8dp"
+                    android:maxLines="1"
+                    android:text="Issue Name:"
+                    android:textColor="@color/LighterRed"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/funds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/issue_name"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:elevation="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Fund:"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tenure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/funds"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:elevation="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Tenure:"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/supporting_document"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tenure"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:elevation="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Document:"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/issue_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/supporting_document"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:elevation="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Description:"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/issue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="8dp"
+                    android:gravity="right"
+                    android:text="Issue 1"
+                    android:textColor="@color/Red"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/fund_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/issue"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:elevation="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="$100"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tenure_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fund_amount"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:elevation="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="5 Years"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/document_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tenure_value"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:elevation="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Soil card"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/issue_description_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/document_name"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:elevation="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="description"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
+

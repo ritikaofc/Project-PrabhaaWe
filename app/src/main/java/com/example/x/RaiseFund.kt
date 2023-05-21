@@ -1,23 +1,27 @@
 package com.example.x
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.example.x.databinding.FragmentRaiseFundBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
+public var countIssues:Int = 0
+
 class RaiseFund : Fragment() {
+
 
     private var _binding: FragmentRaiseFundBinding?= null
     private val binding get() = _binding!!
     private lateinit var mAuth: FirebaseAuth
     private lateinit var db: DatabaseReference
-    var countIssues:Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +57,11 @@ class RaiseFund : Fragment() {
 
         }
 
+        binding.backBtnRaiseIssue.setOnClickListener{
+            val i = Intent(activity,MainActivity::class.java)
+            startActivity(i)
+        }
+
 
         return binding.root
     }
@@ -81,4 +90,5 @@ class RaiseFund : Fragment() {
         fun newInstance() = RaiseFund()
 
     }
+
 }
