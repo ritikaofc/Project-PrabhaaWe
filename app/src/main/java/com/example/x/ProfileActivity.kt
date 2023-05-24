@@ -67,6 +67,7 @@ class ProfileActivity : AppCompatActivity() {
 
         logOutBtn.setOnClickListener{
             Toast.makeText(this@ProfileActivity,"Signing Out...", Toast.LENGTH_SHORT).show()
+            sharedPrefer.putBoolean("isUserLoggedIn",false)
             mAuth.signOut()
             val intent=Intent(this,login_activity::class.java)
             startActivity(intent)

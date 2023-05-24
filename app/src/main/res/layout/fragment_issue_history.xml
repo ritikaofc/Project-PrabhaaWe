@@ -12,6 +12,7 @@
         android:padding="10dp">
 
         <ImageView
+            android:id="@+id/backBtnIssueHistory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -33,13 +34,14 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_below="@+id/issue_history_toolbar"
-        android:background="@color/Red"></View>
+        android:background="@color/Red" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_issue_history"
+        android:id="@+id/raiseIssueRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/view_toolbar"
+        tools:listitem="@layout/raise_issue_item_list"
         android:background="#B8B6B6"
         android:padding="12dp" />
 

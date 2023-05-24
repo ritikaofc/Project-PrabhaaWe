@@ -1,5 +1,6 @@
 package com.example.x
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,9 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.x.databinding.FragmentTransactionsBinding
+
 
 
 class TransactionsFragment : Fragment() {
+    private var _binding:FragmentTransactionsBinding?= null
+    private val binding get() = _binding!!
     private lateinit var adapter: TransactionsAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var transactionsList: ArrayList<Transactions>
@@ -28,7 +33,13 @@ class TransactionsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_transactions, container, false)
+        _binding=FragmentTransactionsBinding.inflate(inflater,container,false)
+        binding.backBtnTransactionHistory.setOnClickListener{
+            val i = Intent(activity,MainActivity::class.java)
+            startActivity(i)
+        }
+        return binding.root
+
     }
 
     companion object {
