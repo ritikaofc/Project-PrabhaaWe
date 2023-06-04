@@ -90,169 +90,174 @@
         </de.hdodenhof.circleimageview.CircleImageView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/profile_photo"
-        android:orientation="vertical"
-        android:padding="10dp">
-
-        <EditText
-            android:editable="true"
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginRight="30sp"
-            android:layout_marginBottom="8sp"
-            android:background="@drawable/border_box"
-            android:cursorVisible="true"
-            android:hint="Full Name"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/LighterRed"
-            android:textSize="16sp"
-            tools:ignore="Deprecated" />
-
-        <EditText
-            android:id="@+id/age"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginRight="30sp"
-            android:layout_marginBottom="8sp"
-            android:background="@drawable/border_box"
-            android:cursorVisible="true"
-            android:hint="Age"
-            android:inputType="number"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/LighterRed"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/gender"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginRight="30sp"
-            android:layout_marginBottom="8sp"
-            android:background="@drawable/border_box"
-            android:cursorVisible="true"
-            android:hint="Gender"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/LighterRed"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginRight="30sp"
-            android:layout_marginBottom="8sp"
-            android:background="@drawable/border_box"
-            android:cursorVisible="true"
-            android:hint="Phone"
-            android:inputType="number"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/LighterRed"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/district"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginRight="30sp"
-            android:layout_marginBottom="8sp"
-            android:background="@drawable/border_box"
-            android:cursorVisible="true"
-            android:hint="District"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/LighterRed"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/aadhar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginRight="30sp"
-            android:layout_marginBottom="8sp"
-            android:background="@drawable/border_box"
-            android:cursorVisible="true"
-            android:hint="Aadhar Number"
-            android:inputType="number"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/LighterRed"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginRight="30sp"
-            android:layout_marginBottom="8sp"
-            android:background="@drawable/border_box"
-            android:cursorVisible="true"
-            android:hint="Address"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/LighterRed"
-            android:textSize="16sp" />
+        >
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="10sp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp">
-        <Button
-            android:id="@+id/save_profile_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/LighterRed"
-            android:text="SAVE"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-            android:layout_marginRight="10dp"
-            android:textColor="@color/white"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-            <Button
+            <EditText
+                android:editable="true"
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="8sp"
+                android:background="@drawable/border_box"
+                android:cursorVisible="true"
+                android:hint="Full Name"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/LighterRed"
+                android:textSize="16sp"
+                tools:ignore="Deprecated" />
 
-                android:id="@+id/update_profile_btn"
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="8sp"
+                android:background="@drawable/border_box"
+                android:cursorVisible="true"
+                android:hint="Age"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/LighterRed"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="8sp"
+                android:background="@drawable/border_box"
+                android:cursorVisible="true"
+                android:hint="Gender"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/LighterRed"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="8sp"
+                android:background="@drawable/border_box"
+                android:cursorVisible="true"
+                android:hint="Phone"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/LighterRed"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/district"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="8sp"
+                android:background="@drawable/border_box"
+                android:cursorVisible="true"
+                android:hint="District"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/LighterRed"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/aadhar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="8sp"
+                android:background="@drawable/border_box"
+                android:cursorVisible="true"
+                android:hint="Aadhar Number"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/LighterRed"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="8sp"
+                android:background="@drawable/border_box"
+                android:cursorVisible="true"
+                android:hint="Address"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/LighterRed"
+                android:textSize="16sp" />
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@color/LighterRed"
-                android:text="UPDATE"
-                android:textColor="@color/white"
+                android:orientation="horizontal"
+                android:padding="10sp"
                 android:layout_marginLeft="50dp"
-                android:textSize="16sp"
+                android:layout_marginRight="50dp">
+                <Button
+                    android:id="@+id/save_profile_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/LighterRed"
+                    android:text="SAVE"
 
-                android:textStyle="bold" />
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <Button
+
+                    android:id="@+id/update_profile_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/LighterRed"
+                    android:text="UPDATE"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="16sp"
+
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>
