@@ -83,6 +83,7 @@ class ProfileActivity : AppCompatActivity() {
             val address=userAddress.text.toString()
             addProfileData(fullName,age,gender,phone,district,aadhar,address)
             Toast.makeText(this,"saving....",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this,MainActivity::class.java))
             retrieveDataProfileFromFragment()
         }
 
