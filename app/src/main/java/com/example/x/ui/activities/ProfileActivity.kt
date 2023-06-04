@@ -78,7 +78,14 @@ class ProfileActivity : AppCompatActivity() {
             val phone=userPhone.text.toString()
             val district=userDistrict.text.toString()
             val address=userAddress.text.toString()
-            addProfileData(fullName,age,gender,phone,district,aadhar,address)
+            if(isBlank(fullName) && isBlank(age) && isBlank(gender) && isBlank(aadhar) && isBlank(phone) && isBlank(district)
+                && isBlank(address)){
+                addProfileData(fullName,age,gender,phone,district,aadhar,address)
+            }
+            else {
+                Toast.makeText(this,"Fields cannot be empty",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             Toast.makeText(this,"saving....",Toast.LENGTH_SHORT).show()
             startActivity(Intent(this,MainActivity::class.java))
             retrieveDataProfileFromFragment()
@@ -158,8 +165,12 @@ class ProfileActivity : AppCompatActivity() {
         }
     }
 
-
-
+    private fun isBlank(string: String) : Boolean{
+        if(string.isEmpty()){
+            return false
+        }
+        return true
+    }
 
     private fun addProfileData(fullName: String, age: String, gender: String, phone: String, district: String, aadhar: String, address: String) {
         db=FirebaseDatabase.getInstance().reference
