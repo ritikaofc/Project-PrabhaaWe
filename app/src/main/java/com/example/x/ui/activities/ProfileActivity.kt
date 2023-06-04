@@ -67,6 +67,7 @@ class ProfileActivity : AppCompatActivity() {
             sharedPrefer.putBoolean("isUserLoggedIn", false)
             mAuth.signOut()
             val intent=Intent(this, login_activity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
             finish()
         }
