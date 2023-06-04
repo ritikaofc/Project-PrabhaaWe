@@ -1,4 +1,4 @@
-package com.example.x
+package com.example.x.utils
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
@@ -9,7 +9,7 @@ object sharedPrefer {
     private lateinit var preferences:SharedPreferences
     fun init(context: Context)
     {
-        preferences=context.getSharedPreferences(NAME,MODE_PRIVATE)
+        preferences =context.getSharedPreferences(NAME,MODE_PRIVATE)
     }
 
     fun putBoolean(key:String,value:Boolean){
