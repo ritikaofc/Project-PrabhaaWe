@@ -11,7 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.example.x.R
-import com.example.x.Models.profileDetails
+import com.example.x.models.profileDetails
 import com.example.x.sharedPrefer
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference

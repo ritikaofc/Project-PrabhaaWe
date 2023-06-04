@@ -1,10 +1,9 @@
-package com.example.x.Repository
+package com.example.x.repository
 
 import androidx.lifecycle.MutableLiveData
-import com.example.x.Models.RaiseIssueDataClass
+import com.example.x.models.RaiseIssueDataClass
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import java.util.Objects
 
 class RaiseIssueRepository {
     private val id=FirebaseAuth.getInstance().currentUser!!.uid

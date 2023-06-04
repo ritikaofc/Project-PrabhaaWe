@@ -16,7 +16,6 @@ class forget_password_activity : AppCompatActivity() {
     private lateinit var btnReset :Button
     private lateinit var mAuth: FirebaseAuth
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forget_password)
@@ -25,11 +24,9 @@ class forget_password_activity : AppCompatActivity() {
         email = findViewById(R.id.email)
         btnReset = findViewById(R.id.btn_reset)
 
-
         btnReset.setOnClickListener{
             setNewPassword(email)
         }
-
     }
 
     private fun setNewPassword(email :EditText) {

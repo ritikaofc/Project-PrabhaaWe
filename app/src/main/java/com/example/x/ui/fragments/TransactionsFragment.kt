@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.x.R
-import com.example.x.Models.Transactions
-import com.example.x.Adapter.TransactionsAdapter
+import com.example.x.models.Transactions
+import com.example.x.ui.adapter.TransactionsAdapter
 import com.example.x.databinding.FragmentTransactionsBinding
 import com.example.x.ui.activities.MainActivity
 

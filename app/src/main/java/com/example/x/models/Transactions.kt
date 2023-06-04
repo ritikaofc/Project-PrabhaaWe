@@ -1,4 +1,4 @@
-package com.example.x.Models
+package com.example.x.models
 
 data class Transactions(
     var accNo:Int,

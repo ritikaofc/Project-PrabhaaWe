@@ -1,4 +1,4 @@
-package com.example.x.Models
+package com.example.x.models
 
 //variables  define that are in your realtime database
 data class RaiseIssueDataClass(
