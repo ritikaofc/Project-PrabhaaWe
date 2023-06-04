@@ -37,186 +37,193 @@
         android:layout_below="@+id/raise_fund_toolbar"
         android:background="@color/Red" />
 
-    <LinearLayout
-        android:id="@+id/ll"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/view_toolbar"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        android:padding="10dp">
-
-        <EditText
-            android:id="@+id/issueName"
+        android:layout_below="@id/view_toolbar">
+        <LinearLayout
+            android:id="@+id/ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginRight="30sp"
-            android:layout_marginBottom="8sp"
-            android:background="@drawable/border_box"
-            android:cursorVisible="true"
-            android:hint="Issue Name"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/LighterRed"
-            android:textSize="16sp" />
+            android:layout_below="@id/view_toolbar"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-        <EditText
-            android:id="@+id/issueDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginRight="30sp"
-            android:layout_marginBottom="8sp"
-            android:background="@drawable/border_box"
-            android:cursorVisible="true"
-            android:hint="Issue Description"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/LighterRed"
-            android:textSize="16sp" />
+            <EditText
+                android:id="@+id/issueName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="8sp"
+                android:background="@drawable/border_box"
+                android:cursorVisible="true"
+                android:hint="Issue Name"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/LighterRed"
+                android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/fundRequired"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginRight="30sp"
-            android:layout_marginBottom="8sp"
-            android:background="@drawable/border_box"
-            android:cursorVisible="true"
-            android:hint="Fund Required"
-            android:inputType="number"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/LighterRed"
-            android:textSize="16sp" />
+            <EditText
+                android:id="@+id/issueDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="8sp"
+                android:background="@drawable/border_box"
+                android:cursorVisible="true"
+                android:hint="Issue Description"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/LighterRed"
+                android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/tenure"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginRight="30sp"
-            android:layout_marginBottom="8sp"
-            android:background="@drawable/border_box"
-            android:cursorVisible="true"
-            android:hint="Tenure"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/LighterRed"
-            android:textSize="16sp" />
+            <EditText
+                android:id="@+id/fundRequired"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="8sp"
+                android:background="@drawable/border_box"
+                android:cursorVisible="true"
+                android:hint="Fund Required"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/LighterRed"
+                android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/supportingDocument"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginRight="30sp"
-            android:layout_marginBottom="8sp"
-            android:background="@drawable/border_box"
-            android:cursorVisible="true"
-            android:hint="Supporting Document"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/LighterRed"
-            android:textSize="16sp" />
+            <EditText
+                android:id="@+id/tenure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="8sp"
+                android:background="@drawable/border_box"
+                android:cursorVisible="true"
+                android:hint="Tenure"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/LighterRed"
+                android:textSize="16sp" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="61dp">
+            <EditText
+                android:id="@+id/supportingDocument"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="8sp"
+                android:background="@drawable/border_box"
+                android:cursorVisible="true"
+                android:hint="Supporting Document"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/LighterRed"
+                android:textSize="16sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="61dp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Attach Suppporting Document"
+                    android:textColor="@color/LighterRed"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonChooseFile"
+                    app:layout_constraintHorizontal_bias="0.755"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.487" />
+
+                <Button
+                    android:id="@+id/buttonChooseFile"
+                    android:layout_width="98dp"
+                    android:layout_height="42dp"
+                    android:text="Choose File"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.904"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.461" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/UPI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="8sp"
+                android:background="@drawable/border_box"
+                android:cursorVisible="true"
+                android:hint="UPI ID"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/LighterRed"
+                android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Attach Suppporting Document"
-                android:textColor="@color/LighterRed"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/buttonChooseFile"
-                app:layout_constraintHorizontal_bias="0.755"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.487" />
+                android:text="OR"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/accountDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="8sp"
+                android:background="@drawable/border_box"
+                android:cursorVisible="true"
+                android:hint="Account details"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/LighterRed"
+                android:textSize="16sp" />
 
             <Button
-                android:id="@+id/buttonChooseFile"
-                android:layout_width="98dp"
-                android:layout_height="42dp"
-                android:text="Choose File"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.904"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.461" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <EditText
-            android:id="@+id/UPI"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginRight="30sp"
-            android:layout_marginBottom="8sp"
-            android:background="@drawable/border_box"
-            android:cursorVisible="true"
-            android:hint="UPI ID"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/LighterRed"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="OR"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-
-        <EditText
-            android:id="@+id/accountDetails"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginRight="30sp"
-            android:layout_marginBottom="8sp"
-            android:background="@drawable/border_box"
-            android:cursorVisible="true"
-            android:hint="Account details"
-            android:inputType="number"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/LighterRed"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/saveBtnRaiseIssue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@color/LighterRed"
-            android:text="SAVE"
-            android:textColor="@color/white"
-            android:textSize="16dp"
-            android:textStyle="bold" />
+                android:id="@+id/saveBtnRaiseIssue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@color/LighterRed"
+                android:text="SAVE"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
 
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
 </RelativeLayout>
