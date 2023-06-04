@@ -78,6 +78,10 @@ class ProfileActivity : AppCompatActivity() {
             val phone=userPhone.text.toString()
             val district=userDistrict.text.toString()
             val address=userAddress.text.toString()
+            if(aadhar.length !=12){
+                Toast.makeText(this,"Aadhar should be of 12 digits",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             if(isBlank(fullName) && isBlank(age) && isBlank(gender) && isBlank(aadhar) && isBlank(phone) && isBlank(district)
                 && isBlank(address)){
                 addProfileData(fullName,age,gender,phone,district,aadhar,address)
