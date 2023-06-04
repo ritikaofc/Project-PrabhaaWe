@@ -1,4 +1,4 @@
-package com.example.x
+package com.example.x.ui.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,10 +7,11 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.x.R
+import com.example.x.Models.signUpUser
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import kotlin.math.log
 
 class signUp : AppCompatActivity() {
 
@@ -74,7 +75,7 @@ class signUp : AppCompatActivity() {
     }
 
     private fun changeofActivity(uid: String) {
-        val intent= Intent(this,ProfileActivity::class.java)
+        val intent= Intent(this, ProfileActivity::class.java)
         intent.putExtra("uid",uid)
         finish()
         startActivity(intent)

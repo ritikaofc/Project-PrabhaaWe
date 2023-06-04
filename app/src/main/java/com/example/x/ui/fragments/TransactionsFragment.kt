@@ -1,4 +1,4 @@
-package com.example.x
+package com.example.x.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.x.R
+import com.example.x.Models.Transactions
+import com.example.x.Adapter.TransactionsAdapter
 import com.example.x.databinding.FragmentTransactionsBinding
-
+import com.example.x.ui.activities.MainActivity
 
 
 class TransactionsFragment : Fragment() {
@@ -35,7 +38,7 @@ class TransactionsFragment : Fragment() {
     ): View? {
         _binding=FragmentTransactionsBinding.inflate(inflater,container,false)
         binding.backBtnTransactionHistory.setOnClickListener{
-            val i = Intent(activity,MainActivity::class.java)
+            val i = Intent(activity, MainActivity::class.java)
             startActivity(i)
         }
         return binding.root
@@ -100,7 +103,7 @@ class TransactionsFragment : Fragment() {
         )
 
         for(i in acc.indices){
-            val transactions=Transactions(acc[i],sender[i],amt[i])
+            val transactions= Transactions(acc[i],sender[i],amt[i])
             transactionsList.add(transactions)
         }
 

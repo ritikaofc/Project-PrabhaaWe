@@ -1,4 +1,4 @@
-package com.example.x
+package com.example.x.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,8 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.x.Adapter.MyAdapter
 import com.example.x.Models.RaiseIssueViewModel
+import com.example.x.R
 import com.example.x.databinding.FragmentIssueHistoryBinding
-import com.example.x.databinding.FragmentRaiseFundBinding
+import com.example.x.ui.activities.MainActivity
 
 
 class fragment_issue_history : Fragment() {
@@ -33,7 +34,7 @@ class fragment_issue_history : Fragment() {
     ): View? {
         _binding=FragmentIssueHistoryBinding.inflate(inflater,container,false)
         binding.backBtnIssueHistory.setOnClickListener{
-            val i = Intent(activity,MainActivity::class.java)
+            val i = Intent(activity, MainActivity::class.java)
             startActivity(i)
         }
         return binding.root

@@ -4,7 +4,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".Home_Fragment">
+tools:context=".ui.fragments.Home_Fragment">
 
 <RelativeLayout
     android:id="@+id/home_toolbar"

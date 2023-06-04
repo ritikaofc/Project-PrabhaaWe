@@ -1,25 +1,22 @@
-package com.example.x
+package com.example.x.ui.activities
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.example.x.R
+import com.example.x.Models.profileDetails
+import com.example.x.sharedPrefer
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import de.hdodenhof.circleimageview.CircleImageView
-import kotlinx.coroutines.newFixedThreadPoolContext
-import kotlin.properties.Delegates
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var logOutBtn:TextView
@@ -67,9 +64,9 @@ class ProfileActivity : AppCompatActivity() {
 
         logOutBtn.setOnClickListener{
             Toast.makeText(this@ProfileActivity,"Signing Out...", Toast.LENGTH_SHORT).show()
-            sharedPrefer.putBoolean("isUserLoggedIn",false)
+            sharedPrefer.putBoolean("isUserLoggedIn", false)
             mAuth.signOut()
-            val intent=Intent(this,login_activity::class.java)
+            val intent=Intent(this, login_activity::class.java)
             startActivity(intent)
             finish()
         }
@@ -88,7 +85,7 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         backBtn.setOnClickListener{
-            val intent= Intent(this,MainActivity::class.java)
+            val intent= Intent(this, MainActivity::class.java)
             intent.putExtra("uid",uid)
             finish()
             startActivity(intent)

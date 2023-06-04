@@ -18,7 +18,7 @@
         android:theme="@style/Theme.X"
         tools:targetApi="31">
         <activity
-            android:name=".ProfileActivity"
+            android:name=".ui.activities.ProfileActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -32,21 +32,21 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".signUp"
+            android:name=".ui.activities.signUp"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".forget_password_activity"
+            android:name=".ui.activities.forget_password_activity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".login_activity"
+            android:name=".ui.activities.login_activity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize">
             <meta-data
@@ -54,7 +54,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".splash_screen"
+            android:name=".ui.activities.splash_screen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,7 +67,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activities.MainActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

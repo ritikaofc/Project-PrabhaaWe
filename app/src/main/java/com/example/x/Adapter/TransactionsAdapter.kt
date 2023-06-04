@@ -1,11 +1,12 @@
-package com.example.x
+package com.example.x.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.x.R
+import com.example.x.Models.Transactions
 
 class TransactionsAdapter(private val transactionsList : ArrayList<Transactions> ) :RecyclerView.Adapter<TransactionsAdapter.TViewHolder>() {
 

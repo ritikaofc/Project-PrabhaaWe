@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment_issue_history">
+    tools:context=".ui.fragments.fragment_issue_history">
 
     <RelativeLayout
         android:id="@+id/issue_history_toolbar"
