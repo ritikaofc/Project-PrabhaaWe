@@ -46,10 +46,16 @@ class RaiseFund : Fragment() {
             val supportingDocument=binding.supportingDocument.text.toString()
             val upi=binding.UPI.text.toString()
             val accountDetails=binding.accountDetails.text.toString()
-            countIssues +=1
-            addingRaiseIssueData(Name,Description,fundRequired,tenure,supportingDocument,upi,accountDetails,
-                countIssues
-            )
+            if(isBlank(Name) && isBlank(Description) && isBlank(fundRequired) && isBlank(tenure) && isBlank(supportingDocument) && isBlank(upi) && isBlank(accountDetails)){
+                countIssues +=1
+                addingRaiseIssueData(Name,Description,fundRequired,tenure,supportingDocument,upi,accountDetails,
+                    countIssues
+                )
+            }
+            else {
+                Toast.makeText(context,"Fill all the fields",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             Toast.makeText(context,"saving issue to issue history",Toast.LENGTH_SHORT).show()
             binding.issueName.text.clear()
             binding.UPI.text.clear()
@@ -87,6 +93,13 @@ class RaiseFund : Fragment() {
             RaiseIssueDetails(issueName,issueDescription,fundRequired
         ,tenure,supportingDocument,upi,accountDetails)
         )
+    }
+
+    private fun isBlank(string: String) : Boolean{
+        if(string.isEmpty()){
+            return false
+        }
+        return true
     }
 
 
