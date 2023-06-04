@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.x.api.RetrofitInstance
 import com.example.x.databinding.FragmentHomeBinding
-import com.example.x.Models.responseDataClass
+import com.example.x.models.responseDataClass
 import com.example.x.ui.activities.ProfileActivity
 import retrofit2.Call
 import retrofit2.Callback

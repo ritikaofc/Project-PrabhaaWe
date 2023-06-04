@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.x.Models.RaiseIssueDetails
+import com.example.x.models.RaiseIssueDetails
 import com.example.x.databinding.FragmentRaiseFundBinding
 import com.example.x.ui.activities.MainActivity
 import com.google.firebase.auth.FirebaseAuth

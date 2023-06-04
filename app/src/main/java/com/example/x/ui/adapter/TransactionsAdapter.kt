@@ -1,4 +1,4 @@
-package com.example.x.Adapter
+package com.example.x.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.x.R
-import com.example.x.Models.Transactions
+import com.example.x.models.Transactions
 
 class TransactionsAdapter(private val transactionsList : ArrayList<Transactions> ) :RecyclerView.Adapter<TransactionsAdapter.TViewHolder>() {
 

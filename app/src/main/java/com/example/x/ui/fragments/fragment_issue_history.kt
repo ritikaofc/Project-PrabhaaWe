@@ -10,8 +10,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.x.Adapter.MyAdapter
-import com.example.x.Models.RaiseIssueViewModel
+import com.example.x.ui.adapter.MyAdapter
+import com.example.x.models.RaiseIssueViewModel
 import com.example.x.R
 import com.example.x.databinding.FragmentIssueHistoryBinding
 import com.example.x.ui.activities.MainActivity

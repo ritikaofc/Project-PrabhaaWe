@@ -1,9 +1,9 @@
-package com.example.x.Models
+package com.example.x.models
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.x.Repository.RaiseIssueRepository
+import com.example.x.repository.RaiseIssueRepository
 
 class RaiseIssueViewModel:ViewModel() {
     private val repository : RaiseIssueRepository
