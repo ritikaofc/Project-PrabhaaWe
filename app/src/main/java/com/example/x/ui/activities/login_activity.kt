@@ -64,7 +64,13 @@ class login_activity : AppCompatActivity() {
             val password = edtPassword.text.toString()
 
             //function to login the user
-            signIn(email,password)
+            if(isBlank(email) && isBlank(password)){
+                signIn(email,password)
+            }
+            else {
+                Toast.makeText(this,"Fields cannot be empty",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
         }
 
     }
@@ -96,6 +102,11 @@ class login_activity : AppCompatActivity() {
                 }
             }
     }
-
+    private fun isBlank(string: String) : Boolean{
+        if(string.isEmpty()){
+            return false
+        }
+        return true
+    }
 
 }
