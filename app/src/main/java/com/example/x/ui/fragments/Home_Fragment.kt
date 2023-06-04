@@ -1,4 +1,4 @@
-package com.example.x
+package com.example.x.ui.fragments
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -10,9 +10,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.example.x.api.RetrofitInstance
 import com.example.x.databinding.FragmentHomeBinding
-import kotlinx.android.synthetic.main.fragment_home_.*
-import kotlinx.android.synthetic.main.fragment_home_.view.*
+import com.example.x.Models.responseDataClass
+import com.example.x.ui.activities.ProfileActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -40,7 +41,7 @@ class Home_Fragment : Fragment() {
         _binding=FragmentHomeBinding.inflate(inflater,container,false)
 
         binding.userImage.setOnClickListener{
-            val intent = Intent(context,ProfileActivity::class.java)
+            val intent = Intent(context, ProfileActivity::class.java)
             startActivity(intent)
         }
 

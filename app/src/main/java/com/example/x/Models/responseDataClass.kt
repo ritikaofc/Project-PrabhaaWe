@@ -1,4 +1,4 @@
-package com.example.x
+package com.example.x.Models
 
 data class responseDataClass(
     val id: String,

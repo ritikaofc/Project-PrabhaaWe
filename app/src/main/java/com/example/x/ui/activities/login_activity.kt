@@ -1,4 +1,4 @@
-package com.example.x
+package com.example.x.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,9 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.x.R
+import com.example.x.ui.activities.forget_password_activity
+import com.example.x.sharedPrefer
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.SignInMethodQueryResult
@@ -47,12 +50,12 @@ class login_activity : AppCompatActivity() {
 
 
         txtSignup.setOnClickListener{
-            val intent=Intent(this,signUp::class.java)
+            val intent=Intent(this, signUp::class.java)
             startActivity(intent)
         }
 
         txtRecover.setOnClickListener{
-            val intent=Intent(this,forget_password_activity::class.java)
+            val intent=Intent(this, forget_password_activity::class.java)
             startActivity(intent)
         }
 
@@ -72,8 +75,8 @@ class login_activity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    sharedPrefer.putBoolean("isUserLoggedIn",true)
-                    val intent =Intent(this,MainActivity::class.java)
+                    sharedPrefer.putBoolean("isUserLoggedIn", true)
+                    val intent =Intent(this, MainActivity::class.java)
                     finish()
                     startActivity(intent)
                 }
