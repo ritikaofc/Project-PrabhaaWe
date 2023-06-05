@@ -1,8 +1,9 @@
-package com.example.x.models
+package com.example.x.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.x.models.RaiseIssueDataClass
 import com.example.x.repository.RaiseIssueRepository
 
 class RaiseIssueViewModel:ViewModel() {
