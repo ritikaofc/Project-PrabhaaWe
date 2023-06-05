@@ -8,7 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
 import com.example.x.R
-import com.example.x.sharedPrefer
+import com.example.x.utils.sharedPrefer
 
 class splash_screen : AppCompatActivity() {
     @SuppressLint("SuspiciousIndentation")

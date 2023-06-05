@@ -9,8 +9,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.x.R
-import com.example.x.ui.activities.forget_password_activity
-import com.example.x.sharedPrefer
+import com.example.x.utils.sharedPrefer
+import com.example.x.utils.Network
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.SignInMethodQueryResult
@@ -91,11 +91,16 @@ class login_activity : AppCompatActivity() {
                     // either user does not exist or password is wrong
                     mAuth.fetchSignInMethodsForEmail(email)
                         .addOnCompleteListener(OnCompleteListener<SignInMethodQueryResult?> { task ->
-                            val isNewUser = task.result.signInMethods?.isEmpty()
-                            if (isNewUser==true) {
-                                Toast.makeText(this@login_activity,"User Does not Exist", Toast.LENGTH_SHORT).show()
-                            } else {
-                                Toast.makeText(this@login_activity,"Password Wrong", Toast.LENGTH_SHORT).show()
+                            if(Network.isConnected(this)){
+                                val isNewUser = task.result.signInMethods?.isEmpty()
+                                if (isNewUser==true) {
+                                    Toast.makeText(this@login_activity,"User Does not Exist", Toast.LENGTH_SHORT).show()
+                                } else {
+                                    Toast.makeText(this@login_activity,"Password Wrong", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            else {
+                                Toast.makeText(this,"Make sure you are connected to internet",Toast.LENGTH_SHORT).show()
                             }
                         })
 
