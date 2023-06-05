@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.x.R
+import com.example.x.utils.Network
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -25,7 +26,12 @@ class forget_password_activity : AppCompatActivity() {
         btnReset = findViewById(R.id.btn_reset)
 
         btnReset.setOnClickListener{
-            setNewPassword(email)
+            if(Network.isConnected(this)){
+                setNewPassword(email)
+            } else {
+                Toast.makeText(this,"Make sure you are connected to the internet",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
         }
     }
 
