@@ -14,21 +14,16 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
-public var countIssues:Int = 0
+var countIssues:Int = 0
 
 class RaiseFund : Fragment() {
 
 
     private var _binding: FragmentRaiseFundBinding?= null
     private val binding get() = _binding!!
+
     private lateinit var mAuth: FirebaseAuth
     private lateinit var db: DatabaseReference
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +31,6 @@ class RaiseFund : Fragment() {
     ): View? {
         _binding=FragmentRaiseFundBinding.inflate(inflater,container,false)
         mAuth= FirebaseAuth.getInstance()
-
 
         binding.saveBtnRaiseIssue.setOnClickListener{
             val Name=binding.issueName.text.toString()
@@ -64,15 +58,12 @@ class RaiseFund : Fragment() {
             binding.issueDescription.text.clear()
             binding.tenure.text.clear()
             binding.supportingDocument.text.clear()
-
         }
 
         binding.backBtnRaiseIssue.setOnClickListener{
             val i = Intent(activity, MainActivity::class.java)
             startActivity(i)
         }
-
-
         return binding.root
     }
 
@@ -95,6 +86,11 @@ class RaiseFund : Fragment() {
         )
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     private fun isBlank(string: String) : Boolean{
         if(string.isEmpty()){
             return false
@@ -102,12 +98,9 @@ class RaiseFund : Fragment() {
         return true
     }
 
-
     companion object {
-
         @JvmStatic
         fun newInstance() = RaiseFund()
-
     }
 
 }
