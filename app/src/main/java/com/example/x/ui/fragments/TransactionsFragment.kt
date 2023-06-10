@@ -16,57 +16,46 @@ import com.example.x.ui.activities.MainActivity
 
 
 class TransactionsFragment : Fragment() {
-    private var _binding:FragmentTransactionsBinding?= null
+
+    private var _binding: FragmentTransactionsBinding? = null
     private val binding get() = _binding!!
+
     private lateinit var adapter: TransactionsAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var transactionsList: ArrayList<Transactions>
 
     private lateinit var acc: Array<Int>
-    private lateinit var sender:Array<String>
-    private lateinit var amt:Array<String>
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private lateinit var sender: Array<String>
+    private lateinit var amt: Array<String>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding=FragmentTransactionsBinding.inflate(inflater,container,false)
-        binding.backBtnTransactionHistory.setOnClickListener{
+        _binding = FragmentTransactionsBinding.inflate(inflater, container, false)
+        binding.backBtnTransactionHistory.setOnClickListener {
             val i = Intent(activity, MainActivity::class.java)
             startActivity(i)
         }
         return binding.root
-
-    }
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance() = TransactionsFragment()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dataInitialize()
-        val layoutManager= LinearLayoutManager(context)
-        recyclerView=view.findViewById(R.id.transactionsRecyclerView)
-        recyclerView.layoutManager=layoutManager
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView = view.findViewById(R.id.transactionsRecyclerView)
+        recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapter= TransactionsAdapter(transactionsList)
-        recyclerView.adapter=adapter
+        adapter = TransactionsAdapter(transactionsList)
+        recyclerView.adapter = adapter
 
     }
 
-    private fun dataInitialize(){
-        transactionsList= arrayListOf<Transactions>()
+    private fun dataInitialize() {
+        transactionsList = arrayListOf<Transactions>()
 
-        acc= arrayOf(
+        acc = arrayOf(
             1100000111,
             1000000022,
             1000000033,
@@ -76,9 +65,9 @@ class TransactionsFragment : Fragment() {
             1000000077,
             1000000088,
 
-        )
+            )
 
-        sender= arrayOf(
+        sender = arrayOf(
             getString(R.string.sender_1),
             getString(R.string.sender_2),
             getString(R.string.sender_3),
@@ -90,7 +79,7 @@ class TransactionsFragment : Fragment() {
 
         )
 
-        amt= arrayOf(
+        amt = arrayOf(
             "$1000",
             "$2000",
             "$3000",
@@ -102,10 +91,20 @@ class TransactionsFragment : Fragment() {
 
         )
 
-        for(i in acc.indices){
-            val transactions= Transactions(acc[i],sender[i],amt[i])
+        for (i in acc.indices) {
+            val transactions = Transactions(acc[i], sender[i], amt[i])
             transactionsList.add(transactions)
         }
 
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    companion object {
+        @JvmStatic
+        fun newInstance() = TransactionsFragment()
     }
 }
