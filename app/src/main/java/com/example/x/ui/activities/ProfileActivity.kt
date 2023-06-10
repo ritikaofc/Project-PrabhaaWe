@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.example.x.R
+import com.example.x.databinding.ActivityProfileBinding
 import com.example.x.models.profileDetails
 import com.example.x.utils.sharedPrefer
 import com.google.firebase.auth.FirebaseAuth
@@ -19,50 +20,40 @@ import com.google.firebase.database.FirebaseDatabase
 import de.hdodenhof.circleimageview.CircleImageView
 
 class ProfileActivity : AppCompatActivity() {
-    private lateinit var logOutBtn:TextView
-    private lateinit var backBtn:ImageView
-    private lateinit var userName:EditText
-    private lateinit var userImage: CircleImageView
-    private lateinit var userAge:EditText
-    private lateinit var userGender:EditText
-    private lateinit var userPhone:EditText
-    private lateinit var userDistrict:EditText
-    private lateinit var userAadhar:EditText
-    private lateinit var userAddress:EditText
+
     private lateinit var mAuth: FirebaseAuth
-    private lateinit var saveBtn:Button
-    private lateinit var updateBtn:Button
     private lateinit var db:DatabaseReference
     private lateinit var uid:String
     private  var IMAGE_CODE:Int = 0
     private lateinit var imageUri:Uri
 
+    private lateinit var binding: ActivityProfileBinding
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile)
+        binding = ActivityProfileBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         mAuth = FirebaseAuth.getInstance()
-        backBtn=findViewById(R.id.backBtnProfile)
-        logOutBtn=findViewById(R.id.logOutbtnprofile)
-        userGender=findViewById(R.id.gender)
-        userName=findViewById(R.id.name)
-        userPhone=findViewById(R.id.phone)
-        userAadhar=findViewById(R.id.aadhar)
-        userAge=findViewById(R.id.age)
-        userDistrict=findViewById(R.id.district)
-        userAddress=findViewById(R.id.address)
-        saveBtn=findViewById(R.id.save_profile_btn)
-        updateBtn=findViewById(R.id.update_profile_btn)
+//        backBtn=findViewById(R.id.backBtnProfile)
+//        logOutBtn=findViewById(R.id.logOutbtnprofile)
+//        userGender=findViewById(R.id.gender)
+//        userName=findViewById(R.id.name)
+//        userPhone=findViewById(R.id.phone)
+//        userAadhar=findViewById(R.id.aadhar)
+//        userAge=findViewById(R.id.age)
+//        userDistrict=findViewById(R.id.district)
+//        userAddress=findViewById(R.id.address)
+//        saveBtn=findViewById(R.id.save_profile_btn)
+//        updateBtn=findViewById(R.id.update_profile_btn)
         uid = intent.getStringExtra("uid").toString()
         IMAGE_CODE=1
-        userImage=findViewById(R.id.userprofileImage)
+//        userImage=findViewById(R.id.userprofileImage)
 
         retrieveDataProfileFromFragment()
 
-
-        logOutBtn.setOnClickListener{
+        binding.logOutbtnprofile.setOnClickListener{
             Toast.makeText(this@ProfileActivity,"Signing Out...", Toast.LENGTH_SHORT).show()
             sharedPrefer.putBoolean("isUserLoggedIn", false)
             mAuth.signOut()
@@ -71,14 +62,14 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        saveBtn.setOnClickListener {
-            val fullName=userName.text.toString()
-            val age=userAge.text.toString()
-            val gender=userGender.text.toString()
-            val aadhar=userAadhar.text.toString()
-            val phone=userPhone.text.toString()
-            val district=userDistrict.text.toString()
-            val address=userAddress.text.toString()
+        binding.saveProfileBtn.setOnClickListener {
+            val fullName=binding.name.text.toString()
+            val age=binding.age.text.toString()
+            val gender=binding.gender.text.toString()
+            val aadhar=binding.aadhar.text.toString()
+            val phone=binding.phone.text.toString()
+            val district=binding.district.text.toString()
+            val address=binding.address.text.toString()
             if(aadhar.length !=12){
                 Toast.makeText(this,"Aadhar should be of 12 digits",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -96,26 +87,25 @@ class ProfileActivity : AppCompatActivity() {
             retrieveDataProfileFromFragment()
         }
 
-        backBtn.setOnClickListener{
+        binding.backBtnProfile.setOnClickListener{
             val intent= Intent(this, MainActivity::class.java)
             intent.putExtra("uid",uid)
             finish()
             startActivity(intent)
         }
 
-        userImage.setOnClickListener{
-
+        binding.userprofileImage.setOnClickListener{
             openImage()
         }
 
-        updateBtn.setOnClickListener{
-            val fullName=userName.text.toString()
-            val age=userAge.text.toString()
-            val gender=userGender.text.toString()
-            val aadhar=userAadhar.text.toString()
-            val phone=userPhone.text.toString()
-            val district=userDistrict.text.toString()
-            val address=userAddress.text.toString()
+        binding.updateProfileBtn.setOnClickListener{
+            val fullName=binding.name.text.toString()
+            val age=binding.name.text.toString()
+            val gender=binding.gender.text.toString()
+            val aadhar=binding.aadhar.text.toString()
+            val phone=binding.phone.text.toString()
+            val district=binding.district.text.toString()
+            val address=binding.address.text.toString()
             Toast.makeText(this,"Updating..",Toast.LENGTH_SHORT).show()
             addProfileData(fullName,age,gender,phone,district,aadhar,address)
             retrieveDataProfileFromFragment()
@@ -136,13 +126,13 @@ class ProfileActivity : AppCompatActivity() {
                 val gender=it.child("gender").value
                 val phone=it.child("phoneNumber").value
                 Toast.makeText(this,"Profile info successfully retrieved..",Toast.LENGTH_SHORT).show()
-                userName.setText(name.toString())
-                userGender.setText(gender.toString())
-                userAddress.setText(address.toString())
-                userAadhar.setText(aadhar.toString())
-                userDistrict.setText(district.toString())
-                userAge.setText(age.toString())
-                userPhone.setText(phone.toString())
+                binding.name.setText(name.toString())
+                binding.gender.setText(gender.toString())
+                binding.address.setText(address.toString())
+                binding.aadhar.setText(aadhar.toString())
+                binding.district.setText(district.toString())
+                binding.age.setText(age.toString())
+                binding.phone.setText(phone.toString())
 
             }else{
                 Toast.makeText(this,"Profile info does not exist..",Toast.LENGTH_SHORT).show()
@@ -166,7 +156,7 @@ class ProfileActivity : AppCompatActivity() {
         if(requestCode==IMAGE_CODE && resultCode==RESULT_OK && data!=null && data.data !=null )
         {
             imageUri= data.data!!
-            userImage.setImageURI(imageUri)
+            binding.userprofileImage.setImageURI(imageUri)
         }
     }
 

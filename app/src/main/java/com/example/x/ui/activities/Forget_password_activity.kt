@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.x.R
+import com.example.x.databinding.ActivityForgetPasswordBinding
 import com.example.x.utils.Network
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -13,21 +14,22 @@ import com.google.firebase.ktx.Firebase
 
 class forget_password_activity : AppCompatActivity() {
 
-    private lateinit var email:EditText
-    private lateinit var btnReset :Button
     private lateinit var mAuth: FirebaseAuth
+
+    private lateinit var binding: ActivityForgetPasswordBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_forget_password)
+        binding = ActivityForgetPasswordBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         mAuth = FirebaseAuth.getInstance()
-        email = findViewById(R.id.email)
-        btnReset = findViewById(R.id.btn_reset)
 
-        btnReset.setOnClickListener{
+        binding.btnReset.setOnClickListener{
             if(Network.isConnected(this)){
-                setNewPassword(email)
+                if(binding.email.text.toString().isNotEmpty()){
+                    setNewPassword(binding.email)
+                }
             } else {
                 Toast.makeText(this,"Make sure you are connected to the internet",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
